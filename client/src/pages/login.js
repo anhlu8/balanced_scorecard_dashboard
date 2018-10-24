@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../css/login.css";
 import API from "../utils/API";
-import imagine from "../assets/img/back.jpg";
+import imagine from "../assets/img/back.png";
 
 import {
   Form,
@@ -55,13 +55,13 @@ class Login extends Component {
     return (
       <div className="Login">
         {/* <Row className="show-grid"> */}
-        <Col md={6}>
+        <Col md={7}>
           <div className="background" style={sidebarBackground}>
-            <h1>Advanced Business Dashboard</h1>
-            <p>Turn your data into insightful digital dashboards in minutes.</p>
+            {/* <h1>Advanced Business Dashboard</h1>
+            <p>Turn your data into insightful digital dashboards in minutes.</p> */}
           </div>
         </Col>
-        <Col md={6}>
+        <Col md={5}>
           <Form id="signup" onSubmit={this.onSubmit}>
             {message !== "" && (
               <div

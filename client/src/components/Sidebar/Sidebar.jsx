@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import HeaderLinks from "../Header/HeaderLinks.jsx";
 
-import imagine from "../../assets/img/back.jpg";
+import imagine from "../../assets/img/back.png";
 import logo from "../../assets/img/reactlogo.png";
 
 import dashboardRoutes from "../../routes/dashboard.jsx";

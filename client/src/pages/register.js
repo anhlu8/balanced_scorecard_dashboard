@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../css/register.css";
 import API from "../utils/API";
-import imagine from "../assets/img/back.jpg";
+import imagine from "../assets/img/back.png";
 
 import {
   Col,
