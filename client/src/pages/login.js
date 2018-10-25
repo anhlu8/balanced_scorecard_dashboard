@@ -15,7 +15,8 @@ import {
 
 const sidebarBackground = {
   backgroundImage: "url(" + imagine + ")",
-  color: "white"
+  color: "white",
+  backgroundSize: "cover"
 };
 class Login extends Component {
   state = {
@@ -52,17 +53,24 @@ class Login extends Component {
 
   render() {
     const { username, password, message } = this.state;
+    const colomn = {
+      alignItems: "center",
+      justifyContent: "center",
+      position: "absolute",
+      top: 300,
+      right: 250
+    };
     return (
       <div className="Login">
         {/* <Row className="show-grid"> */}
-        <Col md={7}>
+        <Col md={8}>
           <div className="background" style={sidebarBackground}>
             {/* <h1>Advanced Business Dashboard</h1>
             <p>Turn your data into insightful digital dashboards in minutes.</p> */}
           </div>
         </Col>
-        <Col md={5}>
-          <Form id="signup" onSubmit={this.onSubmit}>
+        <Col md={4}>
+          <Form id="signup" onSubmit={this.onSubmit} style={colomn}>
             {message !== "" && (
               <div
                 className="alert alert-warning alert-dismissible"

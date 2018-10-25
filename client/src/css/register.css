@@ -5,3 +5,9 @@
     padding: 0;
   }
 }
+@media all and (max-width: 992px) {
+  .background {
+    z-index:0;
+    position: relative
+  }
+}

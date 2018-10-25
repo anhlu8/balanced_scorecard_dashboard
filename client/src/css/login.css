@@ -8,6 +8,7 @@
     max-width: 320px;
     padding: 0;
   }
+
 }
 
 .Login {
@@ -19,7 +20,7 @@
 }
 .background {
   position: fixed;
-  /* top: 0; */
+  top: 0;
   /* bottom: 0; */
   left: 0;
 
@@ -29,8 +30,19 @@
   /* font-weight: 100%; */
   /* background-position: center center; */
   height: 100%;
-  width: 50%;
+  width: 65%;
   /* 
   background-size: cover; */
   /* background-position: center center; */
+}
+
+.signup {
+  background-position: center
+}
+
+@media all and (max-width: 992px) {
+  .background {
+    z-index:0;
+    position: relative
+  }
 }

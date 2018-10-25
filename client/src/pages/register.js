@@ -8,11 +8,14 @@ import {
   Button,
   FormGroup,
   FormControl,
-  ControlLabel
+  ControlLabel,
+  Form,
+  ButtonToolbar
 } from "react-bootstrap";
 
 const sidebarBackground = {
-  backgroundImage: "url(" + imagine + ")"
+  backgroundImage: "url(" + imagine + ")",
+  backgroundSize: "cover"
 };
 
 class Register extends Component {
@@ -60,18 +63,26 @@ class Register extends Component {
   };
   render() {
     const { firstname, lastname, username, password, message } = this.state;
+    const colomn = {
+      alignItems: "center",
+      justifyContent: "center",
+      position: "absolute",
+      top: 250,
+      right: 250
+    };
     return (
       <div className="Register">
         {/* <Row className="show-grid"> */}
-        <Col md={6}>
+        <Col md={7}>
           <div className="background" style={sidebarBackground} />
         </Col>
-        <Col md={6}>
-          <form id="signup" onSubmit={this.onSubmit}>
+        <Col md={5}>
+          <Form id="signup" onSubmit={this.onSubmit} style={colomn}>
             {message !== "" && (
               <div
                 className="alert alert-warning alert-dismissible"
                 role="alert"
+                
               >
                 <b>{message}</b>
               </div>
@@ -123,6 +134,7 @@ class Register extends Component {
               />
             </FormGroup>
 
+            <ButtonToolbar>
             <Button
               bsSize="large"
               type="submit"
@@ -131,7 +143,18 @@ class Register extends Component {
             >
               Register me
             </Button>
-          </form>
+        
+            <Button
+                bsSize="large"
+                // type="sign up"
+                bsStyle="primary"
+                // name="action"
+                href="/"
+              >
+               Login
+              </Button>
+              </ButtonToolbar>
+          </Form>
         </Col>
         {/* </Row> */}
       </div>
