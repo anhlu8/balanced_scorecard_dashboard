@@ -1,8 +1,8 @@
 import Dashboard from "../views/Dashboard/Dashboard";
-import UserProfile from "../views/UserProfile/UserProfile";
+// import UserProfile from "../views/UserProfile/UserProfile";
 import Products from "../views/Products/Products";
 import FileInput from "../views/FileInput/FileInput";
-import PDFfile from "../views/PDFfile/PDFfile";
+// import PDFfile from "../views/PDFfile/PDFfile";
 import Task from "../views/Task/Task";
 // import Icons from "views/Icons/Icons";
 // import Maps from "views/Maps/Maps";
@@ -34,18 +34,18 @@ const dashboardRoutes = [
     icon: "pe-7s-note",
     component: Task
   },
-  {
-    path: "/pdf",
-    name: "PDF File",
-    icon: "pe-7s-file",
-    component: PDFfile
-  },
-  {
-    path: "/user",
-    name: "User Profile",
-    icon: "pe-7s-user",
-    component: UserProfile
-  },
+  // {
+  //   path: "/pdf",
+  //   name: "PDF File",
+  //   icon: "pe-7s-file",
+  //   component: PDFfile
+  // },
+  // {
+  //   path: "/user",
+  //   name: "User Profile",
+  //   icon: "pe-7s-user",
+  //   component: UserProfile
+  // },
 
   { redirect: true, path: "/", to: "/fileinput", name: "File Upload" }
 ];
