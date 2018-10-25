@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import { Grid, Row, Col, Table } from "react-bootstrap";
+import { Grid, Row, Col, Table, Button } from "react-bootstrap";
 import API from "../../utils/API";
 import Card from "../../components/Card/Card";
 import "../../css/products.css";
 import moment, { relativeTimeThreshold } from "moment";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+
 
 class Products extends Component {
   state = {
@@ -14,6 +17,25 @@ class Products extends Component {
   componentDidMount() {
     this.checkDates();
     this.loadAllProducts();
+  }
+
+  printDocument() {
+    const input = document.getElementById("divToPdf");
+
+    html2canvas(input, {
+  
+      useCORS: true,
+    
+      width: 1700,
+      height: 1670
+    }).then(canvas => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("l", "pt", "b3");
+
+      pdf.addImage(imgData, "JPEG", 10, 10);
+      // pdf.output('dataurlnewwindow');
+      pdf.save("download.pdf");
+    });
   }
 
   getMonthFormat = (productArray) => {
@@ -136,6 +158,7 @@ class Products extends Component {
                 <li className="nav-item">
                   <a className="nav-link" href="#" onClick={this.loadTopProducts}>Top Selling Products</a>
                 </li>
+                
                 {
                   this.state.monthArray.map((month, index) => 
                     <li key={index} className="nav-item">
@@ -143,7 +166,13 @@ class Products extends Component {
                     </li>
                   )
                 }
+                <li className="nav-item">
+                <Button onClick={this.printDocument} bsStyle="success">
+                  Print as PDF
+                </Button>
+                </li>
               </ul>
+                <div id="divToPdf">
                 <Card
                   title="Products"
                   ctTableFullWidth
@@ -175,7 +204,8 @@ class Products extends Component {
                     </Table>
                   }
                 />
-              </Col>
+            </div>              
+            </Col>
             </Row>
           </Grid>
         </div>
