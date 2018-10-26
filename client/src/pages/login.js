@@ -70,7 +70,7 @@ class Login extends Component {
           </div>
         </Col>
         <Col md={4}>
-          <Form id="signup" onSubmit={this.onSubmit} style={colomn}>
+          <Form id="signup" onSubmit={this.onSubmit}>
             {message !== "" && (
               <div
                 className="alert alert-warning alert-dismissible"

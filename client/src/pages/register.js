@@ -77,7 +77,7 @@ class Register extends Component {
           <div className="background" style={sidebarBackground} />
         </Col>
         <Col md={5}>
-          <Form id="signup" onSubmit={this.onSubmit} style={colomn}>
+          <Form id="signup" onSubmit={this.onSubmit}>
             {message !== "" && (
               <div
                 className="alert alert-warning alert-dismissible"
